@@ -21,7 +21,11 @@ export const AddStudent = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(form);
+    // console.log(form);
+    fetch("http://localhost:8080/students", {
+      method: "POST",
+      body: JSON.stringify(form),
+    });
   };
 
   return (
@@ -111,7 +115,7 @@ export const AddStudent = () => {
         />{" "}
       </div>
       <div className="last-part">
-        <select
+        <select 
           value={""} // select dropdown needs both value and onChange attributes
           name="preferred_branch"
           className="preferred_branch"
