@@ -10,10 +10,6 @@ export const ShowStudents = () => {
       // console.log(res.data);
       setStudentData(res.data);
     });
-    axios.post("http://localhost:8080/students").then((res) => {
-      console.log(res.data);
-      //   setStudentData(res.data);
-    });
   }, []);
 
   return (

@@ -1,11 +1,35 @@
 import "../App.css";
+import { useState } from "react";
 
 export const AddStudent = () => {
+  const [form, setForm] = useState({
+    first_name: "",
+    last_name: "",
+    email: "",
+    gender: "",
+    age: "",
+    tenth_score: "",
+    twelth_score: "",
+  });
+
+  const handleChange = (e) => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(form);
+  };
+
   return (
-    <form className="addstudent">
+    <form className="addstudent" onSubmit={handleSubmit}>
       <div className="f-name">
         Firstname:{" "}
         <input
+          onChange={handleChange}
           type="text"
           name="first_name"
           className="first_name"
@@ -16,6 +40,7 @@ export const AddStudent = () => {
         {" "}
         Last Name:
         <input
+          onChange={handleChange}
           type="text"
           name="last_name"
           className="last_name"
@@ -26,6 +51,7 @@ export const AddStudent = () => {
         {" "}
         Email:
         <input
+          onChange={handleChange}
           type="email"
           name="email"
           className="email"
@@ -38,6 +64,7 @@ export const AddStudent = () => {
         <div>
           Male
           <input
+            onChange={handleChange}
             name="gender"
             className="male"
             type="radio"
@@ -45,6 +72,7 @@ export const AddStudent = () => {
           />{" "}
           Female{" "}
           <input
+            onChange={handleChange}
             name="gender"
             className="female"
             type="radio"
@@ -55,6 +83,7 @@ export const AddStudent = () => {
       <div className="f-name">
         Age{" "}
         <input
+          onChange={handleChange}
           type="number"
           name="age"
           className="age"
@@ -64,6 +93,7 @@ export const AddStudent = () => {
       <div className="f-name">
         Tenth Score:{" "}
         <input
+          onChange={handleChange}
           type="number"
           name="tenth_score"
           className="tenth_score"
@@ -73,6 +103,7 @@ export const AddStudent = () => {
       <div className="f-name">
         Twelth Score:{" "}
         <input
+          onChange={handleChange}
           type="number"
           name="twelth_score"
           className="twelth_score"
