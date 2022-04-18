@@ -1,5 +1,5 @@
-// import { AddStudent } from "./components/AddStudent";
-// import { ShowStudents } from "./components/ShowStudents";
+import { AddStudent } from "./components/AddStudent";
+import { ShowStudents } from "./components/ShowStudents";
 
 function App() {
   return (
@@ -9,8 +9,7 @@ function App() {
       {/* make sure the table is shown initially, do not show form initially */}
       {/* make sure to show either of them do not both together */}
       {/* <ShowStudents /> */}
-      {/* <AddStudent /> */}
-      <h1>Hello</h1>
+      <AddStudent />
     </div>
   );
 }
